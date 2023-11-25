@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: calc(100% - 120px);
+  margin: auto;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  --maincolor: #545be8;
+  --linkborder: 1px solid #545be8;
+  color: white;
+}
+a {
+  font-family: "Inter", sans-serif;
+}
+/* ------------------------------------------0 */
+.navbar {
+  width: 100%;
+  background-color: white;
+  box-shadow: -2px 11px 5px -9px rgba(0, 0, 0, 0.75);
+}
+.navbar .container .nav-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 22px 0px;
+}
+.navbar .container .nav-group img {
+  width: 160px;
+}
+.navbar .container .nav-group ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.navbar .container .nav-group ul li {
+  list-style-type: none;
+}
+.navbar .container .nav-group ul li a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  transition: all 0.6s;
+}
+.navbar .container .nav-group ul li a:hover {
+  padding: 10px 20px;
+  background: linear-gradient(200deg, rgba(36, 36, 36, 0.329) 0%, var(--maincolor) 100%);
+  border-radius: 10px;
+  color: white;
+}
+.navbar .container .nav-group ul li .active {
+  font-weight: 600;
+}
+.navbar .container .nav-group .log {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.navbar .container .nav-group .log .reg {
+  padding: 11px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: var(--maincolor);
+  color: white;
+  border-radius: 10px;
+  border: var(--linkborder);
+  transition: all 0.8s;
+  font-weight: 500;
+}
+.navbar .container .nav-group .log .reg:hover {
+  background-color: #2d3170;
+  border: var(--linkborder);
+}
+.navbar .container .nav-group .log .login {
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+  border: var(--linkborder);
+  background: none;
+  color: #545be8;
+  padding: 11px 29px;
+  transition: all 0.8s;
+  font-weight: 500;
+}
+.navbar .container .nav-group .log .login:hover {
+  background-color: #2d3170;
+  color: white;
+}
+/* ----------------------------------------------------------- */
+.register {
+  background-color: #f5f5f5;
+}
+.register .container .reg-group {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 0px;
+}
+.register .container .reg-group .txt {
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 50px;
+  justify-content: space-between;
+}
+.register .container .reg-group .txt a {
+  text-decoration: none;
+  color: var(--maincolor);
+  font-size: 20px;
+  transition: all 0.8s;
+  padding: 10px 0px;
+}
+.register .container .reg-group .txt a:hover {
+  background-color: #2d3170;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+}
+.register .container .reg-group .txt a span {
+  font-weight: 600;
+}
+.register .container .reg-group .txt h2 {
+  font-size: 56px;
+  font-weight: 700;
+  color: black;
+  width: 60%;
+}
+.register .container .reg-group .txt h2 span {
+  color: var(--maincolor);
+}
+.register .container .reg-group .txt p {
+  font-size: 20px;
+  color: #969696;
+  width: 60%;
+}
+.register .container .reg-group .txt .reg {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+.register .container .reg-group .txt .reg a {
+  padding: 11px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: var(--maincolor);
+  color: white;
+  border-radius: 10px;
+  border: var(--linkborder);
+  transition: all 0.8s;
+  font-weight: 500;
+}
+.register .container .reg-group .txt .reg a:hover {
+  background-color: #2d3170;
+  border: var(--linkborder);
+  padding: 11px 24px;
+}
+.register .container .reg-group .txt .reg p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  gap: 12px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+.register .container .reg-group .txt .reg .fa-solid {
+  color: orange;
+  font-size: 30px;
+}
+.register .container .reg-group img {
+  width: 28%;
+}
+/* -------------------------------------------------------------- */
+.what-wegive .container .whatdo {
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.what-wegive .container .whatdo .txt {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.what-wegive .container .whatdo .txt a {
+  text-decoration: none;
+  color: var(--maincolor);
+  font-size: 23px;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  transition: all 0.6s;
+}
+.what-wegive .container .whatdo .txt a:hover {
+  padding: 10px 20px;
+  background: linear-gradient(200deg, rgba(36, 36, 36, 0.329) 0%, var(--maincolor) 100%);
+  border-radius: 10px;
+  color: white;
+}
+.what-wegive .container .whatdo .txt h3 {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  font-size: 56px;
+  font-weight: 700;
+}
+.what-wegive .container .whatdo .txt p {
+  color: #969696;
+  font-size: 22px;
+}
+.what-wegive .container .whatdo .type {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+.what-wegive .container .whatdo .type .item {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px 80px 35px;
+  justify-content: space-between;
+  align-items: left;
+  row-gap: 10px;
+  background-color: #545be8;
+  border-radius: 10px;
+}
+.what-wegive .container .whatdo .type .item .icon {
+  color: #f0c932;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  background-color: white;
+  border-radius: 50%;
+}
+.what-wegive .container .whatdo .type .item h4 {
+  color: white;
+  font-size: 20px;
+}
+.what-wegive .container .whatdo .type .item p {
+  padding-top: 20px;
+  color: #ddd;
+}
+.what-wegive .container .whatdo .arrows{
+  width: 100%;
+  display: flex;
+  padding:50px;
+  justify-content: right;
+  align-items: center;
+  gap:18px;
+}
+.what-wegive .container .whatdo .arrows .fa-solid{
+font-size: 40px;
+color: #f0c932;
+cursor: pointer;
+transition: all 0.6s;
+}
+.what-wegive .container .whatdo .arrows .fa-solid:hover{
+  color: rgb(201, 161, 0);
+  }
