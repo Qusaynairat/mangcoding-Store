@@ -13,6 +13,11 @@ body {
   --maincolor: #545be8;
   --linkborder: 1px solid #545be8;
   color: white;
+  --hovercolor: linear-gradient(
+    200deg,
+    rgba(36, 36, 36, 0.329) 0%,
+    var(--maincolor) 100%
+  );
 }
 a {
   font-family: "Inter", sans-serif;
@@ -22,8 +27,10 @@ a {
   width: 100%;
   background-color: white;
   box-shadow: -2px 11px 5px -9px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0px;
 }
-.navbar .container .nav-group {
+.navbar .row {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -31,42 +38,42 @@ a {
   flex-wrap: wrap;
   padding: 22px 0px;
 }
-.navbar .container .nav-group img {
+.navbar .row img {
   width: 160px;
 }
-.navbar .container .nav-group ul {
+.navbar .row ul {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
 }
-.navbar .container .nav-group ul li {
+.navbar .row ul li {
   list-style-type: none;
 }
-.navbar .container .nav-group ul li a {
+.navbar .row ul li a {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   color: black;
   transition: all 0.6s;
 }
-.navbar .container .nav-group ul li a:hover {
+.navbar .row ul li a:hover {
   padding: 10px 20px;
-  background: linear-gradient(200deg, rgba(36, 36, 36, 0.329) 0%, var(--maincolor) 100%);
+  background: var(--hovercolor);
   border-radius: 10px;
   color: white;
 }
-.navbar .container .nav-group ul li .active {
+.navbar .row ul li .active {
   font-weight: 600;
 }
-.navbar .container .nav-group .log {
+.navbar .row .log {
   display: flex;
   justify-content: right;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
 }
-.navbar .container .nav-group .log .reg {
+.navbar .row .log .reg {
   padding: 11px 20px;
   font-size: 18px;
   text-decoration: none;
@@ -77,11 +84,11 @@ a {
   transition: all 0.8s;
   font-weight: 500;
 }
-.navbar .container .nav-group .log .reg:hover {
-  background-color: #2d3170;
+.navbar .row .log .reg:hover {
+  background: var(--hovercolor);
   border: var(--linkborder);
 }
-.navbar .container .nav-group .log .login {
+.navbar .row .log .login {
   text-decoration: none;
   border-radius: 10px;
   font-size: 18px;
@@ -92,15 +99,15 @@ a {
   transition: all 0.8s;
   font-weight: 500;
 }
-.navbar .container .nav-group .log .login:hover {
-  background-color: #2d3170;
+.navbar .row .log .login:hover {
+  background: var(--hovercolor);
   color: white;
 }
 /* ----------------------------------------------------------- */
-.register {
+.hero {
   background-color: #f5f5f5;
 }
-.register .container .reg-group {
+.hero .row {
   margin-top: 100px;
   width: 100%;
   display: flex;
@@ -108,52 +115,53 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 60px 0px;
+  gap: 40px;
 }
-.register .container .reg-group .txt {
-  width: 72%;
+.hero .row.txt {
+  width: calc(100% - 35% -40%);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 50px;
   justify-content: space-between;
 }
-.register .container .reg-group .txt a {
+.hero .row .txt a {
   text-decoration: none;
   color: var(--maincolor);
   font-size: 20px;
   transition: all 0.8s;
   padding: 10px 0px;
 }
-.register .container .reg-group .txt a:hover {
-  background-color: #2d3170;
+.hero .row .txt a:hover {
+  background: var(--hovercolor);
   border-radius: 10px;
   padding: 10px 20px;
   color: white;
 }
-.register .container .reg-group .txt a span {
+.hero .row .txt a span {
   font-weight: 600;
 }
-.register .container .reg-group .txt h2 {
+.hero .row .txt h2 {
   font-size: 56px;
   font-weight: 700;
   color: black;
-  width: 60%;
 }
-.register .container .reg-group .txt h2 span {
+.hero .row .txt h2 span {
   color: var(--maincolor);
 }
-.register .container .reg-group .txt p {
+.hero .row .txt p {
   font-size: 20px;
   color: #969696;
-  width: 60%;
 }
-.register .container .reg-group .txt .reg {
+.hero .row .txt .reg {
+  padding-top: 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   gap: 30px;
   align-items: center;
 }
-.register .container .reg-group .txt .reg a {
+.hero .row .txt .reg a {
   padding: 11px 20px;
   font-size: 18px;
   text-decoration: none;
@@ -164,14 +172,14 @@ a {
   transition: all 0.8s;
   font-weight: 500;
 }
-.register .container .reg-group .txt .reg a:hover {
-  background-color: #2d3170;
+.hero .row .txt .reg a:hover {
+  background: var(--hovercolor);
   border: var(--linkborder);
   padding: 11px 24px;
 }
-.register .container .reg-group .txt .reg p {
+.hero .row .txt .reg p {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   font-size: 20px;
   gap: 12px;
@@ -179,23 +187,24 @@ a {
   font-weight: 600;
   cursor: pointer;
 }
-.register .container .reg-group .txt .reg .fa-solid {
+.hero .row .txt .reg .fa-solid {
   color: orange;
   font-size: 30px;
 }
-.register .container .reg-group img {
-  width: 28%;
+.hero .row img {
+  width: 35%;
 }
 /* -------------------------------------------------------------- */
-.what-wegive .container .whatdo {
+.course .row {
   width: 100%;
   padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 50px;
 }
-.what-wegive .container .whatdo .txt {
+.course .row .txt {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -204,7 +213,7 @@ a {
   gap: 40px;
 }
 
-.what-wegive .container .whatdo .txt a {
+.course .row .txt a {
   text-decoration: none;
   color: var(--maincolor);
   font-size: 23px;
@@ -212,31 +221,31 @@ a {
   text-transform: uppercase;
   transition: all 0.6s;
 }
-.what-wegive .container .whatdo .txt a:hover {
+.course .row .txt a:hover {
   padding: 10px 20px;
-  background: linear-gradient(200deg, rgba(36, 36, 36, 0.329) 0%, var(--maincolor) 100%);
+  background: var(--hovercolor);
   border-radius: 10px;
   color: white;
 }
-.what-wegive .container .whatdo .txt h3 {
+.course .row .txt h3 {
   text-decoration: none;
   text-transform: capitalize;
   color: black;
   font-size: 56px;
   font-weight: 700;
 }
-.what-wegive .container .whatdo .txt p {
+.course .row .txt p {
   color: #969696;
   font-size: 22px;
 }
-.what-wegive .container .whatdo .type {
-  width: 70%;
+.course .row .type {
+  width: calc(100% - 30% - 50px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
 }
-.what-wegive .container .whatdo .type .item {
+.course .row .type .item {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -247,7 +256,7 @@ a {
   background-color: #545be8;
   border-radius: 10px;
 }
-.what-wegive .container .whatdo .type .item .icon {
+.course .row .type .item .icon {
   color: #f0c932;
   width: 50px;
   height: 50px;
@@ -258,28 +267,253 @@ a {
   background-color: white;
   border-radius: 50%;
 }
-.what-wegive .container .whatdo .type .item h4 {
+.course .row .type .item h4 {
   color: white;
   font-size: 20px;
 }
-.what-wegive .container .whatdo .type .item p {
+.course .row .type .item p {
   padding-top: 20px;
   color: #ddd;
 }
-.what-wegive .container .whatdo .arrows{
+.course .row .arrows {
   width: 100%;
   display: flex;
-  padding:50px;
+  padding: 50px;
   justify-content: right;
   align-items: center;
-  gap:18px;
+  gap: 18px;
 }
-.what-wegive .container .whatdo .arrows .fa-solid{
-font-size: 40px;
-color: #f0c932;
-cursor: pointer;
-transition: all 0.6s;
+.course .row .arrows .fa-solid {
+  font-size: 40px;
+  color: #f0c932;
+  cursor: pointer;
+  transition: all 0.6s;
 }
-.what-wegive .container .whatdo .arrows .fa-solid:hover{
+.course .row .arrows .fa-solid:hover {
   color: rgb(201, 161, 0);
-  }
+}
+/* ------------------------------------------------------- */
+
+.selected {
+  background: linear-gradient(180deg, #545be8 0%, #272db0 100%);
+}
+.selected .row {
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+}
+.selected .row img {
+  width: 30%;
+}
+.selected .row .txt {
+  width: calc(100% - 30% - 45px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  gap: 60px;
+}
+.selected .row .txt a {
+  font-size: 20px;
+  color: #f0c932;
+  text-decoration: none;
+  padding: 10px 0px;
+  transition: all 0.7s;
+}
+.selected .row .txt a:hover {
+  color: white;
+  background: var(--hovercolor);
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+.selected .row .txt h3 {
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+}
+.selected .row .txt p {
+  font-size: 22px;
+  color: #ddd;
+}
+.selected .row .txt .user {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+.selected .row .txt .user p {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.selected .row .txt .user .number {
+  font-size: 22px;
+  color: #f0c932;
+  font-family: "Inter", sans-serif;
+}
+.selected .row .txt .user .view {
+  font-size: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+/* --------------------------------------------------------- */
+.article .row {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px;
+}
+.article .row .imgs {
+  width: calc(100% - 40px - 45%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 40px;
+  flex-wrap: wrap;
+}
+.article .row .imgs .item {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: -2px 10px 18px -7px rgba(0, 0, 0, 0.75);
+}
+.article .row .imgs .item .image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.article .row .imgs .item img {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  aspect-ratio: 135.1/99.079;
+  filter: brightness(80%);
+  display: block;
+}
+.article .row .imgs .item .image i {
+  position: absolute;
+  color: white;
+  z-index: 2;
+  opacity: 0;
+  transition:all 0.8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 160px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: var(--maincolor);
+}
+.article .row .imgs .item .image i:hover{
+  opacity: 0.7;
+}
+.article .row .imgs .item .best-course {
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  padding: 3px;
+  background-color: var(--maincolor);
+  color: white;
+}
+.article .row .imgs .item .price {
+  position: absolute;
+  bottom: 18px;
+  right: 10px;
+  background: none;
+  font-size: 20px;
+  color: white;
+}
+.article .row .imgs .item .details {
+  padding: 20px 22px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.article .row .imgs .item .details h4 {
+  color: black;
+  font-size: 22px;
+}
+.article .row .imgs .item .details a {
+  text-decoration: none;
+  color: var(--maincolor);
+  padding: 10px 15px;
+  transition: all 0.5s;
+}
+.article .row .imgs .item .details a:hover {
+  background: var(--hovercolor);
+  color: black;
+  border-radius: 10px;
+  padding: 10px 18px;
+}
+.article .row .imgs .item .details p {
+  color: #969696;
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+  padding-top: 8px;
+  align-items: center;
+}
+.article .row .txt {
+  width: 45%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: flex-start;
+}
+.article .row .txt a {
+  color: var(--maincolor);
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.7s;
+  padding: 10px 15px;
+}
+.article .row .txt a:hover {
+background: var(--hovercolor);
+color: black;
+border-radius: 10px;
+padding: 10px 18px;
+}
+.article .row .txt h3 {
+  color: #141e32;
+  font-size: 50px;
+  font-weight: 700;
+}
+.article .row .txt p {
+  font-size: 20px;
+  color: #969696;
+}
+.article .row .txt .see-all {
+  color: white;
+  background-color: var(--maincolor);
+  padding: 15px 26px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: all 0.7s;
+}
+.article .row .txt .see-all:hover {
+  padding: 15px 28px;
+  background: var(--hovercolor);
+  color: #141e32;
+}
